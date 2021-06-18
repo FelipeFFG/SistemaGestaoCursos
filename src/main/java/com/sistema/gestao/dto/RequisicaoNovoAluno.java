@@ -3,16 +3,34 @@ package com.sistema.gestao.dto;
 import com.sistema.gestao.model.Aluno;
 
 import java.time.LocalDate;
+
 import javax.validation.constraints.NotBlank;
 public class RequisicaoNovoAluno {
 
+    @NotBlank
+    private Integer id;
     @NotBlank
     private String nome;
     @NotBlank
     private String sexo;
     @NotBlank
-    private LocalDate dataNascimento;
+    private String matricula;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
 
     public String getNome() {
         return nome;
@@ -30,19 +48,12 @@ public class RequisicaoNovoAluno {
         this.sexo = sexo;
     }
 
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
 
     public Aluno toAluno(){
         Aluno aluno = new Aluno();
         aluno.setNome(nome);
         aluno.setSexo(sexo);
-        aluno.setDataNascimento(dataNascimento);
+        aluno.setMatricula(matricula);
         return aluno;
     }
 

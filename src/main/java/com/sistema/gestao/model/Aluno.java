@@ -17,13 +17,16 @@ public class Aluno {
     private String nome;
     private LocalDate dataNascimento = LocalDate.now();
 
-    public Aluno(String nome,String sexo) {
+    public Aluno(String nome,String sexo,String matricula) {
         this.sexo = sexo;
         this.nome = nome;
+        this.matricula = matricula;
     }
 
     public Aluno() {
     }
+
+
 
 
     public Integer getId() {

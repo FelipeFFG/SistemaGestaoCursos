@@ -25,7 +25,7 @@ public class HomeController {
 
     @GetMapping
     public String registrarAulno(){
-        Aluno aluno = new Aluno("joao","masculino");
+        Aluno aluno = new Aluno("joao","masculino","123412");
         alunoRepository.save(aluno);
         return "home";
     }
