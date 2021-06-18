@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="UTF-8"/>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <style>
+        .logo-container {
+            background-color: #47bcff;
+            color: #ffff;
+        }
+
+        .logo {
+            font-family: 'Handlee', cursive;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="logo-container mb-3 p-3 d-flex justify-content-center ">
+    <span class="logo">Sistema De Gestao</span>
+</div>
+
+
+<div class="container">
+    <nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+        <div class="navbar-nav">
+            <a  class="nav-item nav-link" href="/aluno/cadastrar">Cadastrar</a>
+            <a  class="nav-item nav-link" href="/aluno/consultar">Consultar</a>
+            <a  class="nav-item nav-link" href="/aluno/excluir">Excluir</a>
+            <a class="nav-item nav-link" href="/aluno/alterarmatricula">Alterar Matricula</a>
+        </div>
+    </nav>
+<div class="card-body">
+  <div class="row">
+      <div class="col-12 col-sm-8 mb-3">
+           <div th:each = "aluno:${alunos}">
+              <div>NOME</div>
+              <div>
+                  <input class="form-control" th:value="${aluno.nome}" value="nome do aluno"/>
+              </div>
+               <div>SEXO</div>
+               <div>
+                 <input class="form-control" th:value="${aluno.sexo}" value="sexo"/>
+                </div>
+               <div>MATRICULA</div>
+                <div>
+                    <input class="form-control" th:value="${aluno.matricula}" value="matricula"/>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

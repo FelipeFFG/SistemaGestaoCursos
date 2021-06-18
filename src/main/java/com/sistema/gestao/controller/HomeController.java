@@ -41,7 +41,7 @@ public class HomeController {
     }
 
 
-    public String AlterarMatricula(Aluno aluno,Integer matricula){
+    public String AlterarMatricula(Aluno aluno,String matricula){
         aluno.setMatricula(matricula);
         return "home";
     }

@@ -8,18 +8,11 @@ import java.time.LocalDate;
 public class Aluno {
 
 
-    public Integer getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(Integer matricula) {
-        this.matricula = matricula;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer matricula;
-
+    private Integer id;
+    private String matricula;
     private String sexo;
     private String nome;
     private LocalDate dataNascimento = LocalDate.now();
@@ -30,6 +23,23 @@ public class Aluno {
     }
 
     public Aluno() {
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
     public String getSexo() {
