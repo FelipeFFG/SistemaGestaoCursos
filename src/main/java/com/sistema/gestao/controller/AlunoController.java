@@ -3,7 +3,9 @@ package com.sistema.gestao.controller;
 
 import com.sistema.gestao.dto.RequisicaoNovoAluno;
 import com.sistema.gestao.model.Aluno;
+import com.sistema.gestao.model.Turma;
 import com.sistema.gestao.repository.AlunoRepository;
+import com.sistema.gestao.repository.TurmaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +23,9 @@ public class AlunoController {
     @Autowired
     private AlunoRepository alunoRepository;
 
+    @Autowired
+    private TurmaRepository turmaRepository;
+
     @GetMapping
     public String aluno_home(){
         return"aluno";
@@ -37,7 +42,8 @@ public class AlunoController {
         if(result.hasErrors()){
             return "aluno/formulario";
         }
-        Aluno aluno = requisicao.toAluno();
+        List<Turma> turmas = turmaRepository.findById(requisicao.getTurma());
+        Aluno aluno = new Aluno(requisicao.getNome(),requisicao.getSexo(),requisicao.getMatricula(),requisicao.getDataNascimento(),turmas.get(0));
         alunoRepository.save(aluno);
         return "redirect:/home";
     }

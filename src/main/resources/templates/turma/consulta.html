@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     <style>
         .logo-container {
-            background-color: #00ff7f;
+            background-color: #708090;
             color: #ffff;
         }
 
@@ -18,35 +18,31 @@
     </style>
 </head>
 <body>
-<div class="logo-container mb-3 p-3 d-flex justify-content-center ">
+<div class="logo-container mb-3 p-3 d-flex justify-content-center  ">
     <span class="logo">Sistema De Gestao</span>
 </div>
 
-
 <div class="container">
-    <form th:object="${requisicaoCurso}" action= "/curso/consulta" method="get">
-        <div class="input-group mb-3">
-            <input  th:field="*{id}" type="text" name="inputting" class="form-control" placeholder="ID" aria-label="Username">
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
-        </div>
-
+    <form action="/turma/consulta/" method="get">
+            <button class="btn btn-primary" type="submit">Refresh</button>
     </form>
 
 
-    <div class="card mb-3" th:each="curso:${cursos}">
+    <div class="card mb-3" th:each="turma:${turmas}">
         <div class="card-body">
             <div class="row">
                 <div class="col-12 col-sm-8 mb-3">
                     <div class="row">
-                        <div class="col-md-5">ID: <span th:text="${curso.id}"></span>
+                        <div class="col-md-5">ID: <span th:text="${turma.id}"></span>
                         </div>
-                        <div class="col-md-7">NOME: <span th:text="${curso.nome}"></span>
+                        <div class="col-md-7">NOME: <span th:text="${turma.nome}"></span>
                         </div>
+                        <div><input class="form-control" th:value="${turma.escrita_curso}" value="matricula"/></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
 </body>
 </html>

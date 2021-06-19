@@ -10,14 +10,22 @@ public class RequisicaoNovoAluno {
 
 
     private Integer id;
-
     private String nome;
-
     private String sexo;
-
     private String matricula;
-
     private Date dataNascimento;
+
+
+    private Integer turma;
+
+
+    public Integer getTurma() {
+        return turma;
+    }
+
+    public void setTurma(Integer turma) {
+        this.turma = turma;
+    }
 
     public Date getDataNascimento() {
         return dataNascimento;

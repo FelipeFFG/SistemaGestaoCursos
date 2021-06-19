@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
   <style>
     .logo-container {
-      background-color: #47bcff;
+      background-color: #8a2be2;
       color: #ffff;
     }
 
@@ -27,18 +27,16 @@
         <div class="form-group">
           <label for="nome">NOME</label>
           <input th:field="*{nome}" th:errorclass="is-invalid" class="form-control"
-                 placeholder="NOME ALUNO"/>
-          <small>Informa qual o nome do aluno</small>
+                 placeholder="Nome do aluno"/>
           <div class="invalid-feedback" th:error="*{nome}">
             Erros do nome do aluno
           </div>
         </div>
-  
+
         <div class="form-group">
           <label for="sexo">SEXO</label>
           <input th:field="*{sexo}" th:errorclass="is-invalid" class="form-control"
-                 placeholder="sexo"/>
-          <small>Informe o sexo do aluno</small>
+                 placeholder="Sexo do aluno"/>
           <div class="invalid-feedback" th:error="*{sexo}">
             Erros no preechimento do sexo
           </div>
@@ -47,8 +45,7 @@
         <div class="form-group">
           <label for="matricula">MATRICULA</label>
           <input th:field="*{matricula}" th:errorclass="is-invalid" class="form-control"
-                 placeholder="MatriculaDoAluno"/>
-          <small>Matricula do aluno</small>
+                 placeholder="Matricula do aluno"/>
           <div class="invalid-feedback" th:error="*{matricula}">
             Erros no preechimento da matricula
           </div>
@@ -58,9 +55,17 @@
           <label for="dataNascimento">Data Nascimento</label>
           <input th:field="*{dataNascimento}" type="date" class="form-control"
                  placeholder="Data Nacimento"/>
-          <small>Data Nascimento</small>
           <div class="invalid-feedback" th:error="*{dataNascimento}">
             Erros no preechimento da matricula
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="turma">turma</label>
+          <input th:field="*{turma}" th:errorclass="is-invalid" class="form-control"
+                 placeholder="Turma do aluno"/>
+          <div class="invalid-feedback" th:error="*{turma}">
+            Erros no preechimento da turma
           </div>
         </div>
         <button class="btn btn-primary" type="submit">Cadastrar</button>

@@ -18,12 +18,23 @@ public class Aluno implements Cloneable{
     private String nome;
     private Date dataNascimento;
 
-    
+    @ManyToOne
+    private Turma turma;
 
-    public Aluno(String nome,String sexo,String matricula)  {
+    public Turma getTurma() {
+        return turma;
+    }
+
+    public void setTurma(Turma turma) {
+        this.turma = turma;
+    }
+
+    public Aluno(String nome, String sexo, String matricula, Date dataNascimento, Turma turma)  {
         this.sexo = sexo;
         this.nome = nome;
         this.matricula = matricula;
+        this.dataNascimento = dataNascimento;
+        this.turma = turma;
     }
 
     public Aluno() {

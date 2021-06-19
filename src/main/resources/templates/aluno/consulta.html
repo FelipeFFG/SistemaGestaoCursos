@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     <style>
         .logo-container {
-            background-color: #47bcff;
+            background-color: #8a2be2;
             color: #ffff;
         }
 
@@ -26,29 +26,22 @@
     <form th:object="${requisicaoNovoAluno}" action= "/aluno/consulta" method="get">
         <div class="input-group mb-3">
             <input  th:field="*{id}" type="text" name="inputting" class="form-control" placeholder="ID" aria-label="Username">
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
+            <button class="btn btn-outline-secondary" type="submit">Cadastrar</button>
         </div>
 
     </form>
-
-
         <div class="card mb-3" th:each="aluno:${alunos}">
             <div class="card-body">
-                <div class="row">
+                <div class="list-group list-group-flush">
                     <div class="col-12 col-sm-8 mb-3">
-                        <div class="row">
-                            <div class="col-md-5">ID: <span th:text="${aluno.id}"></span>
-                            </div>
-                            <div class="col-md-7">NOME: <span th:text="${aluno.nome}"></span>
-                            </div>
-                        </div>
-                        <div>Matricula</div>
-                        <div><input class="form-control" th:value="${aluno.matricula}" value="matricula"/></div>
-
-                        <div>Sexo</div>
-                        <div>
-                            <textarea class="form-control" th:text="${aluno.sexo}">sexo</textarea>
-                        </div>
+                        <div>ID</div>
+                        <div><input class="form-control" th:value="${aluno.id}" /></div>
+                        <div>NOME</div>
+                        <div><input class="form-control" th:value="${aluno.nome}" /></div>
+                        <div>MATRICULA</div>
+                        <div><input class="form-control" th:value="${aluno.matricula}" /></div>
+                        <div>SEXO</div>
+                        <div><input class="form-control" th:value="${aluno.sexo}"></div>
                     </div>
                 </div>
             </div>

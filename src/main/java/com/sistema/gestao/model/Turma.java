@@ -11,9 +11,15 @@ public class Turma {
     private  Integer id;
     private String nome;
 
+    private String escrita_curso;
+
     @ManyToOne()
     private Curso curso;
 
+
+    public void setEscrita_curso(String escrita_curso) {
+        this.escrita_curso = escrita_curso;
+    }
 
     public Turma() {
     }
@@ -21,6 +27,11 @@ public class Turma {
     public Turma(String nome, Curso curso) {
         this.nome = nome;
         this.curso = curso;
+    }
+
+    public String getEscrita_curso(){
+        escrita_curso = curso.getNome();
+        return escrita_curso;
     }
 
     public String getNome() {

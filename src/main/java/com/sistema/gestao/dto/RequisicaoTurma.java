@@ -10,9 +10,29 @@ import java.util.List;
 
 public class RequisicaoTurma {
 
+
+    private Integer id;
     private String nome;
     private Curso curso;
     private Integer id_curso;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    private Integer turma;
+
+    public Integer getTurma() {
+        return turma;
+    }
+
+    public void setTurma(Integer turma) {
+        this.turma = turma;
+    }
 
     public Integer getId_curso() {
         return id_curso;
