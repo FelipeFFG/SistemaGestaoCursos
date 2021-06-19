@@ -2,19 +2,30 @@ package com.sistema.gestao.dto;
 
 import com.sistema.gestao.model.Aluno;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
-import javax.validation.constraints.NotBlank;
+
 public class RequisicaoNovoAluno {
 
-    @NotBlank
+
     private Integer id;
-    @NotBlank
+
     private String nome;
-    @NotBlank
+
     private String sexo;
-    @NotBlank
+
     private String matricula;
+
+    private Date dataNascimento;
+
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
 
     public Integer getId() {
         return id;
@@ -54,6 +65,7 @@ public class RequisicaoNovoAluno {
         aluno.setNome(nome);
         aluno.setSexo(sexo);
         aluno.setMatricula(matricula);
+        aluno.setDataNascimento(dataNascimento);
         return aluno;
     }
 

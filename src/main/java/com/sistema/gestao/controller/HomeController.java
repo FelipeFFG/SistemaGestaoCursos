@@ -24,25 +24,8 @@ public class HomeController {
 
 
     @GetMapping
-    public String registrarAulno(){
-        Aluno aluno = new Aluno("joao","masculino","123412");
-        alunoRepository.save(aluno);
+    public String home(){
         return "home";
     }
 
-    public String ConsultarAluno(String nome_aluno){
-        List<Aluno> lista_alunos = alunoRepository.findByNome(nome_aluno); //passar uma lista de alunos.
-        return "home";
-    }
-
-    public String ExcluirAluno(String id){
-        alunoRepository.deleteById(id); // aluno deletado por id.
-        return "home";
-    }
-
-
-    public String AlterarMatricula(Aluno aluno,String matricula){
-        aluno.setMatricula(matricula);
-        return "home";
-    }
 }

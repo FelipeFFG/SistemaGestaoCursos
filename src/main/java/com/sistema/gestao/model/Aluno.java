@@ -1,11 +1,12 @@
 package com.sistema.gestao.model;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "alunos")
-public class Aluno {
+public class Aluno implements Cloneable{
 
 
 
@@ -15,9 +16,9 @@ public class Aluno {
     private String matricula;
     private String sexo;
     private String nome;
-    private LocalDate dataNascimento = LocalDate.now();
+    private Date dataNascimento;
 
-    public Aluno(String nome,String sexo,String matricula) {
+    public Aluno(String nome,String sexo,String matricula)  {
         this.sexo = sexo;
         this.nome = nome;
         this.matricula = matricula;
@@ -26,8 +27,10 @@ public class Aluno {
     public Aluno() {
     }
 
-
-
+    @Override
+    public Aluno clone() throws CloneNotSupportedException {
+        return (Aluno) super.clone();
+    }
 
     public Integer getId() {
         return id;
@@ -61,13 +64,11 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public LocalDate getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-
-
 }

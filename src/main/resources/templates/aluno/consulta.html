@@ -23,9 +23,9 @@
     </div>
 
 <div class="container">
-    <form th:object="${alunoID}" action= "/aluno/consulta" method="get">
+    <form th:object="${requisicaoNovoAluno}" action= "/aluno/consulta" method="get">
         <div class="input-group mb-3">
-            <input  th:field="*{id}" type="text" name="inputting" class="form-control" placeholder="Username" aria-label="Username">
+            <input  th:field="*{id}" type="text" name="inputting" class="form-control" placeholder="ID" aria-label="Username">
             <button class="btn btn-primary" type="submit">Cadastrar</button>
         </div>
 
@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-12 col-sm-8 mb-3">
                         <div class="row">
-                            <div class="col-md-5">ID: <span th:value="${aluno.id}"></span>
+                            <div class="col-md-5">ID: <span th:text="${aluno.id}"></span>
                             </div>
                             <div class="col-md-7">NOME: <span th:text="${aluno.nome}"></span>
                             </div>

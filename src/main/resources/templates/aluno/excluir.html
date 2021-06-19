@@ -23,9 +23,8 @@
     </div>
 
 <div class="container">
-    <form th:object="${alunoID}" action= "/aluno/excluir" method="delete">
+    <form th:object="${requisicaoNovoAluno}" action= "/aluno/excluir" method="delete">
         <div class="input-group mb-3">
-            <div>ID</div>
             <input  th:field="*{id}" type="text" name="inputting" class="form-control" placeholder="ID" aria-label="Username">
             <button class="btn btn-primary" type="submit">Atualizar</button>
         </div>

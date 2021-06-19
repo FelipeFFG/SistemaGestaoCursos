@@ -10,6 +10,7 @@ public class Curso {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id;
     private String codigo;
     private String nome;
 

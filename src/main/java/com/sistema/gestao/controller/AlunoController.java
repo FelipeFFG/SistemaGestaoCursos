@@ -1,7 +1,6 @@
 package com.sistema.gestao.controller;
 
 
-import com.sistema.gestao.dto.AlunoID;
 import com.sistema.gestao.dto.RequisicaoNovoAluno;
 import com.sistema.gestao.model.Aluno;
 import com.sistema.gestao.repository.AlunoRepository;
@@ -13,7 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -46,7 +44,7 @@ public class AlunoController {
 
 
     @GetMapping ("consulta")
-    public String consulta(AlunoID id, Model model){
+    public String consulta(RequisicaoNovoAluno id, Model model){
         List<Aluno> alunos =  alunoRepository.findById(id.getId());
         model.addAttribute("alunos",alunos);
         return "/aluno/consulta";
@@ -54,7 +52,7 @@ public class AlunoController {
 
     @Transactional
     @GetMapping("excluir")
-    public String excluir(AlunoID id, Model model){
+    public String excluir(RequisicaoNovoAluno id, Model model){
         List<Aluno> alunos =alunoRepository.deleteById(id.getId());
         model.addAttribute("alunos",alunos);
         return "/aluno/excluir";
@@ -62,25 +60,20 @@ public class AlunoController {
 
 
 
-//    @Transactional
-//    @GetMapping("update")
-//    public String update(AlunoID id, Model model){
-//        List<Aluno> copia = alunoRepository.findById(id.getId());
-//        alunoRepository.deleteById(id.getId());
-//        Aluno aluno = copia.get(0);
-//        aluno.setMatricula(id.getMatricula());
-//        alunoRepository.save(aluno);
-//        List<Aluno> lista_alunos = new ArrayList<Aluno>(1);
-//        lista_alunos.add(aluno);
-//        model.addAttribute("alunos",lista_alunos);
-//        return "/aluno/update";
-//    }
-
-
-
-    @ExceptionHandler(IllegalArgumentException.class)
-    public String onError(){                                                            //retornando para o /home
-        return "redirect:/aluno";
+    @Transactional
+    @GetMapping("update")
+    public String update(RequisicaoNovoAluno id, Model model)  {
+        List<Aluno> aluno =  alunoRepository.findById(id.getId());
+        if(aluno.size()>0){
+            aluno.get(0).setMatricula(id.getMatricula());
+            alunoRepository.save(aluno.get(0));
+        }
+        model.addAttribute("alunos",aluno);
+        return "/aluno/update";
     }
+
+
+
+
 
 }

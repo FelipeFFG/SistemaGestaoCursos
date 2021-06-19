@@ -47,9 +47,19 @@
         <div class="form-group">
           <label for="matricula">MATRICULA</label>
           <input th:field="*{matricula}" th:errorclass="is-invalid" class="form-control"
-                 placeholder="url da imagem"/>
+                 placeholder="MatriculaDoAluno"/>
           <small>Matricula do aluno</small>
           <div class="invalid-feedback" th:error="*{matricula}">
+            Erros no preechimento da matricula
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dataNascimento">Data Nascimento</label>
+          <input th:field="*{dataNascimento}" type="date" class="form-control"
+                 placeholder="Data Nacimento"/>
+          <small>Data Nascimento</small>
+          <div class="invalid-feedback" th:error="*{dataNascimento}">
             Erros no preechimento da matricula
           </div>
         </div>
