@@ -2,7 +2,7 @@ package com.sistema.gestao.dto;
 
 import com.sistema.gestao.model.Disciplina;
 
-public class RequisicaoDiciplina {
+public class RequisicaoDisciplina {
 
 
     private Integer id;
