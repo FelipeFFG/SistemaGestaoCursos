@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="UTF-8"/>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <style>
+        .logo-container {
+            background-color: #47bcff;
+            color: #ffff;
+        }
+
+        .logo {
+            font-family: 'Handlee', cursive;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="logo-container mb-3 p-3 d-flex justify-content-center ">
+    <span class="logo">Sistema De Gestao</span>
+</div>
+
+<div class="container">
+    <div class="card mt-3">
+        <form th:object="${requisicaoTurma}" class="card-body" action="/turma/novo" method="post">
+            <div class="form-group">
+                <label for="nome">NOME</label>
+                <input th:field="*{nome}"  class="form-control"
+                       placeholder="NOME TUMA"/>
+                <small>Informa qual o nome da disciplina</small>
+                <div class="invalid-feedback" th:error="*{nome}">
+                    Erros no nome da turma
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="id_curso">CURSO</label>
+                <input th:field="*{id_curso}"  class="form-control"
+                       placeholder="ID CURSO"/>
+                <small>Informa qual o nome da disciplina</small>
+
+            </div>
+
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

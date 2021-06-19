@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta charset="UTF-8"/>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <style>
+    .logo-container {
+      background-color: #47bcff;
+      color: #ffff;
+    }
+
+    .logo {
+      font-family: 'Handlee', cursive;
+      font-size: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="logo-container mb-3 p-3 d-flex justify-content-center ">
+  <span class="logo">Sistema De Gestao</span>
+</div>
+<div class="container">
+  <div class="card mt-3">
+    <form th:object="${requisicaoProfessor}" class="card-body" action="/professor/novo" method="post">
+      <div class="form-group">
+        <label for="nome">NOME</label>
+        <input th:field="*{nome}" th:errorclass="is-invalid" class="form-control"
+               placeholder="NOME PROFESSOR"/>
+        <small>Informa qual o nome do professor</small>
+        <div class="invalid-feedback" th:error="*{nome}">
+          Erros do nome do aluno
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sexo">SEXO</label>
+        <input th:field="*{sexo}" th:errorclass="is-invalid" class="form-control"
+               placeholder="sexo"/>
+        <small>Informe o sexo do professor</small>
+        <div class="invalid-feedback" th:error="*{sexo}">
+          Erros no preechimento do sexo
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="registro">Registro</label>
+        <input th:field="*{registro}" th:errorclass="is-invalid" class="form-control"
+               placeholder="REGISTRO PROFESSOR"/>
+        <small>Matricula do registro</small>
+        <div class="invalid-feedback" th:error="*{registro}">
+          Erros no preechimento do registro
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="turma">Turma</label>
+        <input th:field="*{turma}" th:errorclass="is-invalid" class="form-control"
+               placeholder="REGISTRO PROFESSOR"/>
+        <small>turmas</small>
+        <div class="invalid-feedback" th:error="*{turma}">
+          Erros no preechimento da turma
+        </div>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Cadastrar</button>
+    </form>
+  </div>
+</div>
+</div>
+</body>
+</html>

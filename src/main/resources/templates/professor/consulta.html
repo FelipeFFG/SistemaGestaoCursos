@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta charset="UTF-8"/>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <style>
+    .logo-container {
+      background-color: #47bcff;
+      color: #ffff;
+    }
+
+    .logo {
+      font-family: 'Handlee', cursive;
+      font-size: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="logo-container mb-3 p-3 d-flex justify-content-center  ">
+  <span class="logo">Sistema De Gestao</span>
+</div>
+
+<div class="container">
+  <form th:object="${requisicaoProfessor}" action= "/professor/consulta" method="get">
+    <div class="input-group mb-3">
+      <input  th:field="*{id}" type="text" name="inputting" class="form-control" placeholder="ID" aria-label="Username">
+      <button class="btn btn-primary" type="submit">Cadastrar</button>
+    </div>
+  </form>
+
+
+  <div class="card mb-3" th:each="turmas:${turmas}">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-sm-8 mb-3">
+          <div class="row">
+            <div class="col-md-5">ID: <span th:text="${turmas.id}"></span>
+            </div>
+            <div class="col-md-7">NOME: <span th:text="${turmas.nome}"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

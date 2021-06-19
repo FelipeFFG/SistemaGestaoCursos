@@ -18,6 +18,8 @@ public class Aluno implements Cloneable{
     private String nome;
     private Date dataNascimento;
 
+    
+
     public Aluno(String nome,String sexo,String matricula)  {
         this.sexo = sexo;
         this.nome = nome;
