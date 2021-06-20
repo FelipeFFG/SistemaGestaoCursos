@@ -19,22 +19,21 @@
 </head>
 <body>
 <div class="logo-container mb-3 p-3 d-flex justify-content-center ">
-    <span class="logo">Sistema De Gestao</span>
+    <span class="logo">Sistema De Gestao-Curso</span>
 </div>
 
 <div class="container">
     <div class="card mt-3">
         <form th:object="${requisicaoCurso}" class="card-body" action="/curso/novo" method="post">
             <div class="form-group">
-                <label for="nome">DISCIPLINA</label>
+                <label for="nome">CURSO</label>
                 <input th:field="*{nome}"  class="form-control"
                        placeholder="NOME DISCIPLINA"/>
-                <small>Informa qual o nome do curso</small>
                 <div class="invalid-feedback" th:error="*{nome}">
                     Erros no nome do curso
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
+            <button class="btn btn-primary" type="submit">CADASTRAR</button>
         </form>
     </div>
 </div>

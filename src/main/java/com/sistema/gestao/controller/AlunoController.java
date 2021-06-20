@@ -68,7 +68,7 @@ public class AlunoController {
 
     @Transactional
     @GetMapping("update")
-    public String update(RequisicaoNovoAluno id, Model model)  {
+    public String update( RequisicaoNovoAluno id, Model model)  {
         List<Aluno> aluno =  alunoRepository.findById(id.getId());
         if(aluno.size()>0){
             aluno.get(0).setMatricula(id.getMatricula());
@@ -80,6 +80,10 @@ public class AlunoController {
 
 
 
+    @ExceptionHandler(IllegalArgumentException.class)                                   //Tratando os paths/status que nao forem os que selecioanmos no porStauts.
+    public String onError(){                                                            //retornando para o /home
+        return "redirect:/aluno";
+    }
 
 
 }

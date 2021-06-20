@@ -18,15 +18,15 @@
     </style>
 </head>
 <body>
-    <div class="logo-container mb-3 p-3 d-flex justify-content-center  ">
-        <span class="logo">Sistema De Gestao</span>
-    </div>
+<div class="logo-container mb-3 p-3 d-flex justify-content-center ">
+    <span class="logo">Sistema De Gestao-Aluno</span>
+</div>
 
 <div class="container">
     <form th:object="${requisicaoNovoAluno}" action= "/aluno/update" method="get">
         <div class="input-group mb-3">
             <input th:field="*{id}" type="text" name="inputting" class="form-control" placeholder="ID" aria-label="Username">
-            <input  th:field="*{matricula}" type="text" name="inputting" class="form-control" placeholder="NovaMatricula" aria-label="Username">
+            <input  th:field="*{matricula}" type="text" name="inputting" class="form-control" placeholder="NOVA MATRICULA" aria-label="Username">
             <button class="btn btn-primary" type="submit">Cadastrar</button>
         </div>
 
@@ -41,12 +41,12 @@
                             <div class="col-md-7">NOME: <span th:text="${aluno.nome}"></span>
                             </div>
                         </div>
-                        <div>Matricula</div>
-                        <div><input class="form-control" th:value="${aluno.matricula}" value="matricula"/></div>
+                        <div>MATRICULA</div>
+                        <div><input class="form-control" th:value="${aluno.matricula}" value="MATRICULA"/></div>
 
-                        <div>Sexo</div>
+                        <div>SEXO</div>
                         <div>
-                            <textarea class="form-control" th:text="${aluno.sexo}">sexo</textarea>
+                            <input class="form-control" th:text="${aluno.sexo}" value="SEXO"></input>
                         </div>
                     </div>
                 </div>

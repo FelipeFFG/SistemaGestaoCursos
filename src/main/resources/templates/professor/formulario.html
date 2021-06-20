@@ -19,8 +19,9 @@
 </head>
 <body>
 <div class="logo-container mb-3 p-3 d-flex justify-content-center ">
-  <span class="logo">Sistema De Gestao</span>
+  <span class="logo">Sistema De Gestao-Professor</span>
 </div>
+
 <div class="container">
   <div class="card mt-3">
     <form th:object="${requisicaoProfessor}" class="card-body" action="/professor/novo" method="post">
@@ -28,7 +29,6 @@
         <label for="nome">NOME</label>
         <input th:field="*{nome}" th:errorclass="is-invalid" class="form-control"
                placeholder="NOME PROFESSOR"/>
-        <small>Informa qual o nome do professor</small>
         <div class="invalid-feedback" th:error="*{nome}">
           Erros do nome do aluno
         </div>
@@ -38,17 +38,15 @@
         <label for="sexo">SEXO</label>
         <input th:field="*{sexo}" th:errorclass="is-invalid" class="form-control"
                placeholder="sexo"/>
-        <small>Informe o sexo do professor</small>
         <div class="invalid-feedback" th:error="*{sexo}">
           Erros no preechimento do sexo
         </div>
       </div>
 
       <div class="form-group">
-        <label for="registro">Registro</label>
+        <label for="registro">REGISTRO</label>
         <input th:field="*{registro}" th:errorclass="is-invalid" class="form-control"
                placeholder="REGISTRO PROFESSOR"/>
-        <small>Matricula do registro</small>
         <div class="invalid-feedback" th:error="*{registro}">
           Erros no preechimento do registro
         </div>
@@ -56,16 +54,15 @@
 
 
       <div class="form-group">
-        <label for="turma">Turma</label>
+        <label for="turma">TURMA</label>
         <input th:field="*{turma}" th:errorclass="is-invalid" class="form-control"
                placeholder="REGISTRO PROFESSOR"/>
-        <small>turmas</small>
         <div class="invalid-feedback" th:error="*{turma}">
           Erros no preechimento da turma
         </div>
       </div>
 
-      <button class="btn btn-primary" type="submit">Cadastrar</button>
+      <button class="btn btn-primary" type="submit">CADASTRAR</button>
     </form>
   </div>
 </div>

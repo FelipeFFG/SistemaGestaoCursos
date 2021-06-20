@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,9 +37,6 @@ public class DisciplinaController {
 
     @PostMapping("novo")
     public String novo(RequisicaoDisciplina requisicao, BindingResult result){
-        if(result.hasErrors()){
-            return "disciplina/formulario";
-        }
         Disciplina disciplina = requisicao.toDisciplina();
         disciplinaRepository.save(disciplina);
         return "redirect:/home";
@@ -50,6 +48,13 @@ public class DisciplinaController {
         List<Disciplina> disciplinas =  disciplinaRepository.findById(requisicao.getId());
         model.addAttribute("disciplinas",disciplinas);
         return "/disciplina/consulta";
+    }
+
+
+
+    @ExceptionHandler(IllegalArgumentException.class)                                   //Tratando os paths/status que nao forem os que selecioanmos no porStauts.
+    public String onError(){                                                            //retornando para o /home
+        return "redirect:/disciplina";
     }
 
 }

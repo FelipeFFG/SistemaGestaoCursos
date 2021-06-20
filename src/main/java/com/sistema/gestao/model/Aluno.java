@@ -1,5 +1,9 @@
 package com.sistema.gestao.model;
 
+import jdk.jfr.MemoryAddress;
+import net.bytebuddy.asm.Advice;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -10,7 +14,7 @@ public class Aluno implements Cloneable{
 
 
 
-    @Id
+    @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String matricula;
@@ -18,8 +22,17 @@ public class Aluno implements Cloneable{
     private String nome;
     private Date dataNascimento;
 
-    @ManyToOne
+    @ManyToOne()
     private Turma turma;
+
+
+
+    private String nome_turma;
+
+    public String getNome_turma(){
+        nome_turma = turma.getNome();
+        return nome_turma;
+    }
 
     public Turma getTurma() {
         return turma;

@@ -1,7 +1,5 @@
 package com.sistema.gestao.controller;
 
-import com.sistema.gestao.dto.RequisicaoCurso;
-import com.sistema.gestao.dto.RequisicaoNovoAluno;
 import com.sistema.gestao.dto.RequisicaoTurma;
 import com.sistema.gestao.model.Aluno;
 import com.sistema.gestao.model.Curso;
@@ -13,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,7 +52,7 @@ public class TurmaController {
             Turma turma = new Turma(requisicao.getNome(),cursos.get(0));
             turmaRepository.save(turma);
         }
-        return "redirect:/home";
+        return "redirect:/turma";
     }
 
 

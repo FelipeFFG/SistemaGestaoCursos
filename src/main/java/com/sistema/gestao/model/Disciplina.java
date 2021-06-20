@@ -11,7 +11,6 @@ public class Disciplina {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
-
     private String nome;
 
 
@@ -38,6 +37,8 @@ public class Disciplina {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+
 
 
 }

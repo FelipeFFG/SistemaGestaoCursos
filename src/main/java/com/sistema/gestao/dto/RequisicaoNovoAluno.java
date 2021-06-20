@@ -15,7 +15,6 @@ public class RequisicaoNovoAluno {
     private String matricula;
     private Date dataNascimento;
 
-
     private Integer turma;
 
 

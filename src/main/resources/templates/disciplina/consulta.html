@@ -19,15 +19,16 @@
 </head>
 <body>
 <div class="logo-container mb-3 p-3 d-flex justify-content-center ">
-    <span class="logo">Sistema De Gestao</span>
+    <span class="logo">Sistema De Gestao-Disciplina</span>
 </div>
+
 
 
 <div class="container">
     <form th:object="${requisicaoDisciplina}" action= "/disciplina/consulta" method="get">
         <div class="input-group mb-3">
             <input  th:field="*{id}" type="text" name="inputting" class="form-control" placeholder="ID" aria-label="Username">
-            <button class="btn btn-primary" type="submit">Cadastrar</button>
+            <button class="btn btn-primary" type="submit">CONSULTAR</button>
         </div>
 
     </form>

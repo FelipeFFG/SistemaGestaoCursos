@@ -18,9 +18,9 @@
   </style>
 </head>
 <body>
-  <div class="logo-container mb-3 p-3 d-flex justify-content-center ">
-    <span class="logo">Sistema De Gestao</span>
-  </div>
+<div class="logo-container mb-3 p-3 d-flex justify-content-center ">
+  <span class="logo">Sistema De Gestao-Aluno</span>
+</div>
   <div class="container">
     <div class="card mt-3">
       <form th:object="${requisicaoNovoAluno}" class="card-body" action="/aluno/novo" method="post">
@@ -52,8 +52,8 @@
         </div>
 
         <div class="form-group">
-          <label for="dataNascimento">Data Nascimento</label>
-          <input th:field="*{dataNascimento}" type="date" class="form-control"
+          <label for="dataNascimento">DATA NASCIMENTO</label>
+          <input th:field="*{dataNascimento}"  th:errorclass="is-invalid" type="date" class="form-control"
                  placeholder="Data Nacimento"/>
           <div class="invalid-feedback" th:error="*{dataNascimento}">
             Erros no preechimento da matricula
@@ -61,14 +61,14 @@
         </div>
 
         <div class="form-group">
-          <label for="turma">turma</label>
+          <label for="turma">TURMA</label>
           <input th:field="*{turma}" th:errorclass="is-invalid" class="form-control"
                  placeholder="Turma do aluno"/>
           <div class="invalid-feedback" th:error="*{turma}">
             Erros no preechimento da turma
           </div>
         </div>
-        <button class="btn btn-primary" type="submit">Cadastrar</button>
+        <button class="btn btn-primary" type="submit">CADASTRAR</button>
       </form>
     </div>
   </div>
